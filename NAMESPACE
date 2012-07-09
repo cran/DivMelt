@@ -1,0 +1,5 @@
+##
+## NAMESPACE file for HRM library.
+##
+## export anything w/out a dot in front. 
+exportPattern("^[^\\.]")
