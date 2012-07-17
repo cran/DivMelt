@@ -3,7 +3,7 @@ require(tcltk)
 DivMelt_gui <- function()
 {
     tt <- tktoplevel()
-    tkwm.title(tt,"HRM Diversity Melting Assay Analysis Tool")
+    tkwm.title(tt,"HRM Diversity Assay Analysis Tool")
     tkwm.geometry(tt,"400x350+0+0")
 
     launchTime <- Sys.time()
@@ -121,7 +121,7 @@ DivMelt_gui <- function()
 	tkwm.deiconify(dlg)
 	tkgrab.set(dlg)
 	tkfocus(dlg)
-	title = "HRM Diversity Melting Assay Analysis Tool"
+	title = "HRM Diversity Assay Analysis Tool"
 	tkwm.title(dlg, title)
 	#tkwm.geometry(dlg,"400x200+0+0")
 	tkwm.geometry(dlg,"+0+0")
@@ -277,7 +277,7 @@ DivMelt_gui <- function()
 	
 	if (scoreF != "")
 	{
-	    opts<-paste("DivMelt score file: ",scoreF)
+	    opts<-paste("HRM score file: ",scoreF)
 	    info <- tklabel(runFrame,text=opts)
 	    tkgrid(info)
 	}
@@ -780,7 +780,7 @@ DivMelt_gui <- function()
 
 	scoreInfo <- tklabel(analysisFrame,text="i",font=fontForHelp)
 	tkbind(scoreInfo, "<Button-1>",scoreHelp)
-	score.but <- tkbutton(analysisFrame,text="DivMelt score file (opt)",command=selectScoreFile)
+	score.but <- tkbutton(analysisFrame,text="HRM score file (opt)",command=selectScoreFile)
 	scoreValueText <- tkentry(analysisFrame,width="40",textvariable=scoreName)
 	tkconfigure(scoreValueText,textvariable=scoreName)
 	tkgrid(scoreInfo,score.but,scoreValueText)
@@ -1122,7 +1122,7 @@ DivMelt_gui <- function()
     }
     plotHelp <-function()
     {
-	return(helpDialog("Plotting","The user may elect to generate summary plots in the PNG or PDF format.  PDF plots also present the T1, T2, and DivMelt score for each sample.  The name assigned to each plot file is derived from the data file (for PDFs) or the sample name (for PNGs).  When subsets of the samples are chosen (using the \"Sample name\" field), each file will bear the sample name."))
+	return(helpDialog("Plotting","The user may elect to generate summary plots in the PNG or PDF format.  PDF plots also present the T1, T2, and an HRM score for each sample.  The name assigned to each plot file is derived from the data file (for PDFs) or the sample name (for PNGs).  When subsets of the samples are chosen (using the \"Sample name\" field), each file will bear the sample name."))
     }
     xrangeHelp <-function()
     {
@@ -1176,7 +1176,7 @@ DivMelt_gui <- function()
 
     shoulderCutoffHelp <-function()
     {
-	return(helpDialog("Shoulder Height Cutoff","The slider can be used to set the threshold as a percentage of the principal peak height that a shoulder must exceed before the shoulder is included in the DivMelt score calculation."))
+	return(helpDialog("Shoulder Height Threshold","The slider can be used to set the threshold as a percentage of the principal peak height that a shoulder must exceed before the shoulder is included in the HRM score calculation."))
     }
 
     t1Help <-function()
@@ -1216,12 +1216,12 @@ DivMelt_gui <- function()
 
     outfileHelp <-function()
     {
-	return(helpDialog("Output File Name","The \"Output file name\" field specifies a name for the text file that will contain the analysis results (T1, T2, DivMelt score, etc.)."))
+	return(helpDialog("Output File Name","The \"Output file name\" field specifies a name for the text file that will contain the analysis results (T1, T2, HRM score, etc.)."))
     }
 
     scoreHelp <-function()
     {
-	return(helpDialog("DivMelt Score File","This option allows the user to specify a file of DivMelt scores to compare against on a sample by sample basis."))
+	return(helpDialog("DivMelt Score File","This option allows the user to specify a file of HRM scores to compare against on a sample by sample basis."))
     }
 
     modelHelp <-function()

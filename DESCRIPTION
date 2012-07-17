@@ -1,17 +1,19 @@
 Package: DivMelt
 Type: Package
-Title: Diversity Melting Assay Analysis package
-Version: 1.0.0
-Author: David Swan <dswan@fhcrc.com>
-Maintainer: David Swan <dswan@fhcrc.com>
-Description: This package has tools for analyzing Diversity Assay
-        fluorescence files to generate melting scores, plots and
-        statistics
-License: Artistic-2.0
+Title: HRM Diversity Assay Analysis Tool
+Version: 1.0.1
+Author: David Swan <dswan@fhcrc.org> with contributions from Craig A
+        Magaret <cmagaret@fhcrc.org>and Matthew M Cousins
+        <matthew.m.cousins@gmail.com>
+Maintainer: David Swan <dswan@fhcrc.org>
+Description: This package has tools for analyzing DNA melting data to
+        generate HRM scores, the DNA diversity measure output of the
+        HRM Diversity Assay
+License: GPL (>= 2)
 Depends: R(>= 2.12.0),tcltk,glmnet
 Imports:
 biocViews:
 URL:
-Packaged: 2012-07-09 16:30:56 UTC; dswan
+Packaged: 2012-07-17 05:40:04 UTC; ripley
 Repository: CRAN
-Date/Publication: 2012-07-10 16:25:45
+Date/Publication: 2012-07-17 05:44:57

@@ -32,6 +32,7 @@ modelDivMelt( trngFile, datFile)
 \author{ David Swan \email{dswan@fhcrc.org}}
 \examples{
 library (DivMelt)
-modelDivMelt(trngFile="DivMelt/data/training.csv",datFile="model.rda")
+pkgDir<-system.file(package="DivMelt")
+modelDivMelt(trngFile=paste(pkgDir,"/data/training.csv",sep=''),datFile="new_model.rda")
 }
 \keyword{ utilities }

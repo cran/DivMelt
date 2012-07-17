@@ -3,7 +3,7 @@
 \docType{data}
 \title{Training data for Linear regression model}
 \description{
-This data represents a the training set used to generate the \"model\"
+This data represents a the training set used to generate the "model"
 Linear regression model used by default with the DivMelt package.
 The training set contains sets of acceptable and unacceptable input samples.
 The samples are characterized in terms of average, minimum and maximum 

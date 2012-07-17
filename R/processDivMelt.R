@@ -259,6 +259,7 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 	write (stats,file=stats.out,ncolumns=statsnum,sep=",",append=FALSE)
     }
 
+    model <-NULL
     if (useLasso)
     {
 	library ("glmnet")
