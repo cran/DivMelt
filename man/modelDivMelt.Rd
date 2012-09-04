@@ -33,6 +33,6 @@ modelDivMelt( trngFile, datFile)
 \examples{
 library (DivMelt)
 pkgDir<-system.file(package="DivMelt")
-modelDivMelt(trngFile=paste(pkgDir,"/data/training.csv",sep=''),datFile="new_model.rda")
+modelDivMelt(trngFile=paste(pkgDir,"/sample_data/training.csv",sep=''),datFile="new_model.rda")
 }
 \keyword{ utilities }

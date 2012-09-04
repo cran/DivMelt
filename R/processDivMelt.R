@@ -270,9 +270,17 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 	write (suspect.list,file=suspect.out,ncolumns=2,sep=",",append=FALSE)
 
 	if (modelFile != "")
+	{
 	    load (file=modelFile)
+	    print(paste("Loaded model file ",modelFile,sep=""))
+	}
 	else
+	{
 	    data (model)
+	    pkgDir<-system.file(package="DivMelt")
+	    load (file=paste(pkgDir,"/data/model.rda",sep=""))
+	    print("Loaded default model file")
+	}
     }
 
 
