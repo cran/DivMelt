@@ -160,7 +160,7 @@ DivMelt_gui <- function()
 	xmax <- as.character(tclvalue(xmaxValue))
 
 	if (doRun)
-	    resp= tklabel(runFrame,text="Perform HRM Diversity Assay Analysis with the following options?",font=fontForHelp)
+	    resp= tklabel(runFrame,text="Perform HRM Diversity Assay Analysis with the following options?",font=fontForHelp)
 	else
 	    resp= tklabel(runFrame,text="You have selected the following options:",font=fontForHelp)
 
@@ -332,9 +332,9 @@ DivMelt_gui <- function()
 		processDivMelt(dir=dirN,
 		    singleFile=fileN,
 		    format=plotTypeVal,
-		    excludeEarly=(epcV!=0),earlyCutoff=as.real(earlyV),
-		    excludeLate=(lpcV!=0),lateCutoff=as.real(lateV),
-		    includeShoulders=(hhtV!=0),shoulderCutoff=as.real(shoulderV)/100.0,
+		    excludeEarly=(epcV!=0),earlyCutoff=as.double(earlyV),
+		    excludeLate=(lpcV!=0),lateCutoff=as.double(lateV),
+		    includeShoulders=(hhtV!=0),shoulderCutoff=as.double(shoulderV)/100.0,
 		    showFlorSmooth=(fsmCB != 0),
 		    showDFlorSmooth=(dfsmCB != 0),
 		    useLasso=(lassoV!=0),
@@ -343,15 +343,15 @@ DivMelt_gui <- function()
 		    statsFile=statsF,
 		    scoreFile=scoreF,
 		    sampleMask=sampleN,
-		    theta1=as.real(t1V),
-		    theta2=as.real(t2V),
-		    t1Cutoff=as.real(t1HoldV),
-		    t2Cutoff=as.real(t2HoldV),
-		    t1SlopeWindow=as.real(t1SlopeW),
-		    t2SlopeWindow=as.real(t2SlopeW),
+		    theta1=as.double(t1V),
+		    theta2=as.double(t2V),
+		    t1Cutoff=as.double(t1HoldV),
+		    t2Cutoff=as.double(t2HoldV),
+		    t1SlopeWindow=as.double(t1SlopeW),
+		    t2SlopeWindow=as.double(t2SlopeW),
 		    xrangeOverride=(xrange != 0),
-		    xrangemin=as.real(xmin),
-		    xrangemax=as.real(xmax),
+		    xrangemin=as.double(xmin),
+		    xrangemax=as.double(xmax),
 		    progressFunc=updateBar)
 
 		tkmessageBox(message=paste("Processing complete.  Click 'View new files' to see generated files.",sep=" "))

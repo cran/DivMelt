@@ -374,8 +374,8 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 	    {
 		print("skipped..")
 		if (! is.null(progressFunc)) {
-		    fileProg = (as.real(samp)/length(data.desc[,2]))
-		    progressFunc((as.real(fileind-1) / length(files))+(fileProg / length(files)))
+		    fileProg = (as.double(samp)/length(data.desc[,2]))
+		    progressFunc((as.double(fileind-1) / length(files))+(fileProg / length(files)))
 		}
 		next
 	    }
@@ -390,8 +390,8 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 	    {
 		print("skipped..")
 		if (! is.null(progressFunc)) {
-		    fileProg = (as.real(samp)/length(data.desc[,2]))
-		    progressFunc((as.real(fileind-1) / length(files))+(fileProg / length(files)))
+		    fileProg = (as.double(samp)/length(data.desc[,2]))
+		    progressFunc((as.double(fileind-1) / length(files))+(fileProg / length(files)))
 		}
 		next
 	    }
@@ -431,8 +431,8 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 		{
 		    print("skipped..")
 		    if (! is.null(progressFunc)) {
-			fileProg = (as.real(samp)/length(data.desc[,2]))
-			progressFunc((as.real(fileind-1) / length(files))+(fileProg / length(files)))
+			fileProg = (as.double(samp)/length(data.desc[,2]))
+			progressFunc((as.double(fileind-1) / length(files))+(fileProg / length(files)))
 		    }
 		    next
 		}
@@ -951,8 +951,8 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 
 		if (DivMelt.index != 0)
 		{
-		    abline(v=as.real(newdat[DivMelt.index,2]),col="gray")
-		    abline(v=as.real(newdat[DivMelt.index,3]),col="gray")
+		    abline(v=as.double(newdat[DivMelt.index,2]),col="gray")
+		    abline(v=as.double(newdat[DivMelt.index,3]),col="gray")
 		}
 	    }
 
@@ -1027,7 +1027,7 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 	    }
 	    else if (DivMelt.index != 0)
 	    {
-		title.suffix= sprintf("(vs. %.2f)",as.real(newdat[DivMelt.index,5]))
+		title.suffix= sprintf("(vs. %.2f)",as.double(newdat[DivMelt.index,5]))
 	    }
 	    else
 		title.suffix=""
@@ -1045,17 +1045,17 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 		    resStatStr1 = sprintf("T1:    %.2f",data.orig[scan.upi,1])
 		    if (DivMelt.index != 0)
 			resStatStr1 = paste(resStatStr1,
-			    sprintf("(vs. %.2f)",as.real(newdat[DivMelt.index,2])),sep=" ")
+			    sprintf("(vs. %.2f)",as.double(newdat[DivMelt.index,2])),sep=" ")
 		    resStatStr1 = paste(resStatStr1,
 			    sprintf("\nT2:    %.2f",data.orig[scan.downi,1]))
 		    if (DivMelt.index != 0)
 			resStatStr1 = paste(resStatStr1,
-			    sprintf("(vs. %.2f)",as.real(newdat[DivMelt.index,3])),sep=" ")
+			    sprintf("(vs. %.2f)",as.double(newdat[DivMelt.index,3])),sep=" ")
 
 		    resStatStr2 = sprintf("Peak:  %.2f",data.orig[scan.peaki,1])
 		    if (DivMelt.index != 0)
 			resStatStr2 = paste(resStatStr2,
-			    sprintf("(vs. %.2f)",as.real(newdat[DivMelt.index,4])),sep=" ")
+			    sprintf("(vs. %.2f)",as.double(newdat[DivMelt.index,4])),sep=" ")
 
 		    trueT1Alts=0
 		    resStatStr3=""
@@ -1218,13 +1218,13 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 		    outmeasure=outmeasure+1
 		    out[outmeasure]=newdat[DivMelt.index,7]
 		    outmeasure=outmeasure+1
-		    out[outmeasure]=as.character(data.orig[scan.upi,1]-as.real(newdat[DivMelt.index,2]))
+		    out[outmeasure]=as.character(data.orig[scan.upi,1]-as.double(newdat[DivMelt.index,2]))
 		    outmeasure=outmeasure+1
-		    out[outmeasure]=as.character(data.orig[scan.downi,1]-as.real(newdat[DivMelt.index,3]))
+		    out[outmeasure]=as.character(data.orig[scan.downi,1]-as.double(newdat[DivMelt.index,3]))
 		    outmeasure=outmeasure+1
-		    out[outmeasure]=as.character(data.orig[scan.peaki,1]-as.real(newdat[DivMelt.index,4]))
+		    out[outmeasure]=as.character(data.orig[scan.peaki,1]-as.double(newdat[DivMelt.index,4]))
 		    outmeasure=outmeasure+1
-		    out[outmeasure]=as.character(abs((data.orig[scan.downi,1]-data.orig[scan.upi,1])-as.real(newdat[DivMelt.index,5])))
+		    out[outmeasure]=as.character(abs((data.orig[scan.downi,1]-data.orig[scan.upi,1])-as.double(newdat[DivMelt.index,5])))
 		    outmeasure=outmeasure+1
 		}
 		else
@@ -1244,8 +1244,8 @@ processDivMelt <- function(dir, singleFile="",selectList="",
 	    write (out,file=data.out,ncolumns=outmeasure,sep=",",append=TRUE)
 
 	    if (! is.null(progressFunc)) {
-		fileProg = (as.real(samp)/length(data.desc[,2]))
-		progressFunc((as.real(fileind-1) / length(files))+(fileProg / length(files)))
+		fileProg = (as.double(samp)/length(data.desc[,2]))
+		progressFunc((as.double(fileind-1) / length(files))+(fileProg / length(files)))
 	    }
 	}
 	if (format == "pdf" && selectList=="" && sampleMask=="")
